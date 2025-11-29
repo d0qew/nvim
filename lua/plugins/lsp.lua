@@ -40,6 +40,7 @@ vim.lsp.config("gopls", {
     gopls = {
       usePlaceholders = true,
       completeUnimported = true,
+			gofumpt = true,
       analyses = {
         unusedparams = true,
         unreachable = true,
@@ -102,3 +103,13 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { undercurl = true, sp = "#E5
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  { undercurl = true, sp = "#61AFEF" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  { undercurl = true, sp = "#56B6C2" })
 
+
+local augroup = vim.api.nvim_create_augroup("GoFormat", {})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  group = augroup,
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
+})
