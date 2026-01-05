@@ -103,7 +103,6 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { undercurl = true, sp = "#E5
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  { undercurl = true, sp = "#61AFEF" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  { undercurl = true, sp = "#56B6C2" })
 
-
 local augroup = vim.api.nvim_create_augroup("GoFormat", {})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -113,3 +112,12 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format({ async = false })
   end,
 })
+
+-- border
+local orig = vim.lsp.util.open_floating_preview
+
+function vim.lsp.util.open_floating_preview(contents, syntax, opts)
+  opts = opts or {}
+  opts.border = opts.border or "single"   -- single, double, rounded, solid, shadow
+  return orig(contents, syntax, opts)
+end

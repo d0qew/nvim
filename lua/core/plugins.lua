@@ -27,6 +27,7 @@ require("lazy").setup({
         },
         lazy = false, -- neo-tree will lazily load itself
     },
+    { dir = "~/Documents/pets/y9nika.nvim", name = "y9nika", priority = 1000 },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {
 	 "navarasu/onedark.nvim",

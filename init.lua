@@ -24,7 +24,6 @@ require('plugins.reactive')
 
 -- Color & Themes & Font
 vim.cmd.colorscheme("catppuccin")
-vim.g.mapleader = ","
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.guifont = "JetBrains Mono NL"
@@ -52,10 +51,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 2
   vim.g.neovide_hide_mouse_when_typing = true
-
-  vim.g.neovide_window_blurred = true
-  vim.g.neovide_opacithy = 0.80
-  vim.g.neovide_normal_opacity = 0.80
-  vim.g.neovide_floating_shadow = false
-  vim.g.neovide_show_border = true
 end

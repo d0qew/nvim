@@ -53,10 +53,11 @@ require("catppuccin").setup({
     },
     color_overrides = {},
     custom_highlights = {
-				CursorLine = { fg = "NONE", bg = "NONE" },
-				CursorLineNr = { fg = "#F9E2AF" }, -- yellow
-        LineNr = { fg = "#F5E0DC" }, -- rosewater
-    },
+			-- Basic
+			CursorLine    = { fg = "NONE", bg = "NONE" },
+			CursorLineNr  = { fg = "#F9E2AF" }, -- yellow
+			LineNr        = { fg = "#F5E0DC" }, -- rosewater
+		},
     default_integrations = true,
     auto_integrations = false,
     integrations = {
