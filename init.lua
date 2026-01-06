@@ -1,28 +1,10 @@
 -- Basic
-require('core.plugins')
 require('core.mappings')
+require('core.plugins')
+require('custom.floaterminal')
+require('custom.formatter')
 
--- Plugins 
-require('plugins.neotree')
-require('plugins.treesitter')
-require('plugins.lsp')
-require('plugins.cmp') 
-require('plugins.mason') 
-require('plugins.telescope')
-require('plugins.nvimlint')
-require('plugins.formatter')
-require('plugins.lualine')
-require('plugins.xcodebuild')
-require('plugins.xcbeautify')
-require('plugins.nvimdap')
-require('plugins.nvimdapui')
-require('plugins.floaterminal')
-require('plugins.neogit')
-require('plugins.fidget')
-require('plugins.catppuccin')
-require('plugins.reactive')
-
--- Color & Themes & Font
+-- Common
 vim.cmd.colorscheme("catppuccin")
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -35,9 +17,9 @@ vim.opt.swapfile = false
 vim.opt.exrc = true
 vim.opt.wildoptions:append { 'fuzzy' }
 vim.g.format_on_save = true
-vim.opt.cursorline = true -- highlight the current cursor line
-vim.opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
-vim.opt.shiftwidth = 2 -- 2 spaces for indent width
+vim.opt.cursorline = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.o.colorcolumn = "120"
 vim.o.wrap = false
 vim.g.editorconfig = false
@@ -48,6 +30,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- Neovide
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 2
   vim.g.neovide_hide_mouse_when_typing = true
