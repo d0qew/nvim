@@ -20,6 +20,10 @@
       "rev": "5a7fca171e3ad07380745d573d791e95268b8f3f",
       "src": "https://github.com/NeogitOrg/neogit"
     },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
@@ -51,6 +55,10 @@
     "telescope.nvim": {
       "rev": "cfb85dcf7f822b79224e9e6aef9e8c794211b20b",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "xcodebuild.nvim": {
+      "rev": "6ee81bcf0334eac180111ac7ac2435d421d1508d",
+      "src": "https://github.com/wojciech-kulik/xcodebuild.nvim"
     },
     "y9nika.nvim": {
       "rev": "15e12e8669268ade38095babfa6894779da34542",

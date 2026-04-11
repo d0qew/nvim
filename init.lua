@@ -7,12 +7,14 @@ vim.pack.add {
 	'https://github.com/nvim-telescope/telescope.nvim',
 	'https://github.com/NeogitOrg/neogit',
 	'https://github.com/hrsh7th/nvim-cmp',
+	'https://github.com/wojciech-kulik/xcodebuild.nvim',
 	'https://github.com/nvim-tree/nvim-web-devicons',
 	'https://github.com/nvim-lua/plenary.nvim',
 	'https://github.com/sindrets/diffview.nvim',
     'https://github.com/hrsh7th/cmp-nvim-lsp',
     'https://github.com/hrsh7th/cmp-buffer',
     'https://github.com/hrsh7th/cmp-path',
+    'https://github.com/MunifTanjim/nui.nvim',
 }
 
 -- General
@@ -47,10 +49,12 @@ require('packages.autopairs')
 require('packages.telescope')
 require('packages.neogit')
 require('packages.cmp')
+require('packages.xcodebuild')
 require('custom.floaterminal')
 require('keymap')
 
 vim.lsp.enable('gopls')
+vim.lsp.enable('sourcekit')
 
 -- Autocommands
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -73,10 +77,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.lsp.completion.enable(true, client.id, ev.buf, {
       autotrigger = true,
     })
-
-    if client:supports_method("textDocument/inlayHint") then
-      vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
-    end
   end,
 })
 
