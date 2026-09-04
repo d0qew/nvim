@@ -45,26 +45,6 @@ neogit.setup {
       commit = "https://github.com/${owner}/${repository}/commit/${oid}",
       tree = "https://${host}/${owner}/${repository}/tree/${branch_name}",
     },
-    ["bitbucket.org"] = {
-      pull_request = "https://bitbucket.org/${owner}/${repository}/pull-requests/new?source=${branch_name}&t=1",
-      commit = "https://bitbucket.org/${owner}/${repository}/commits/${oid}",
-      tree = "https://bitbucket.org/${owner}/${repository}/branch/${branch_name}",
-    },
-    ["gitlab.com"] = {
-      pull_request = "https://gitlab.com/${owner}/${repository}/merge_requests/new?merge_request[source_branch]=${branch_name}",
-      commit = "https://gitlab.com/${owner}/${repository}/-/commit/${oid}",
-      tree = "https://gitlab.com/${owner}/${repository}/-/tree/${branch_name}?ref_type=heads",
-    },
-    ["azure.com"] = {
-      pull_request = "https://dev.azure.com/${owner}/_git/${repository}/pullrequestcreate?sourceRef=${branch_name}&targetRef=${target}",
-      commit = "",
-      tree = "",
-    },
-    ["codeberg.org"] = {
-      pull_request = "https://${host}/${owner}/${repository}/compare/${branch_name}",
-      commit = "https://${host}/${owner}/${repository}/commit/${oid}",
-      tree = "https://${host}/${owner}/${repository}/src/branch/${branch_name}",
-    },
   },
   -- Allows a different telescope sorter. Defaults to 'fuzzy_with_index_bias'. The example below will use the native fzf
   -- sorter instead. By default, this function returns `nil`.
@@ -166,7 +146,7 @@ neogit.setup {
     kind = "tab",
   },
   commit_view = {
-    kind = "vsplit",
+    kind = "tab",
     verify_commit = vim.fn.executable("gpg") == 1, -- Can be set to true or false, otherwise we try to find the binary
   },
   log_view = {
